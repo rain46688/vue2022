@@ -17,15 +17,20 @@ export default {
     name : 'DiaLog',
     data(){
         return{
-            month : 1,
+            month : 2,
         }
     },
     watch : {
       // 첫번째 파라미터는 변경전 데이터, 두번째는 변경 후 데이터
       month(a){
-        if(typeof a != 'number'){
-          alert("숫자를 입력해주세요");
-          a = 1;
+        console.log("month");
+        a = Number(a);
+        if(isNaN(a) || typeof a != 'number'){
+          alert("숫자를 입력해주세요.");
+          this.month = 2;
+        }else if(a >= 13){
+          alert('숫자를 12개월 이하로 입력해주세요.');
+          this.month = 2;
         }
       }
     },
@@ -34,6 +39,14 @@ export default {
       detailnum : Number,
       dialogView : Boolean,
     },
+
+  updated() {
+    console.log("updated dialog");
+    if(this.month < 2){
+      alert("2개월 미만은 불가능합니다.");
+      this.month = 2;
+    }
+  },
 }
 </script>
 
