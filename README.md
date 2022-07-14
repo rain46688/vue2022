@@ -1,5 +1,5 @@
-![](/assets/1.png)
-![](/assets/2.png)
+![](/src/assets/1.png)
+![](/src/assets/2.png)
 > 방 가격 알아보는 웹 사이트
 
 ## 기능
